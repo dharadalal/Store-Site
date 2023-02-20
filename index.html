@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EShop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import font awesome -->
     <link
       rel="stylesheet"
@@ -20,57 +21,85 @@
     />
     <!-- import css -->
     <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <main class="main-container">
-        <!-- navbar  -->
-    <nav class="main-navbar">
+      <!-- navbar  -->
+      <nav class="main-navbar">
         <!-- Header Top -->
         <div class="header-top">
-            <div class="header-container mw-margin">
-                        <div class="top-info">
-                            <span><i class="fa-sharp fa-solid fa-location-dot"></i> 121 King Street, Melbourne
-                            </span>
-                            <span><i class="fas fa-mobile-alt"></i> 123-456-7890
-                            </span>
-                        </div>
-                         <div class="left-info">
-                        <ul class="info">
-                            <li><a href="#"> <span><i class="fa-solid fa-code-compare"></i></span> Compare</a></li>
-                            <li><a href="#"> <span><i class="far fa-heart"></i></span> Wishlist</a></li>
-                            <li><a href="#"> <span><i class="far fa-user"></i></span> Login</a></li>
-                        </ul>
-                    </div>   
+          <div class="header-container mw-margin">
+            <div class="top-info">
+              <span
+                ><i class="fa-sharp fa-solid fa-location-dot"></i> 121 King
+                Street, Melbourne
+              </span>
+              <span><i class="fas fa-mobile-alt"></i> 123-456-7890 </span>
             </div>
+            <div class="left-info">
+              <ul class="info">
+                <li>
+                  <a href="#">
+                    <span><i class="fa-solid fa-code-compare"></i></span>
+                    Compare</a
+                  >
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="far fa-heart"></i></span> Wishlist</a
+                  >
+                </li>
+                <li>
+                  <a href="#">
+                    <span><i class="far fa-user"></i></span> Login</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="header-bottom mw-margin">
-            <div class="logo">
-                <h2><a href="./index.html">eshop</a></h2>
-            </div>
-            <div class="menu-content">
-                <div class="content">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Shop</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Shop women</a></li>
-                        <li><a href="#">Shop men</a></li>
-                        <li><a href="#">Shop kids</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
+          <div class="logo">
+            <h2><a href="./index.html">eshop</a></h2>
+          </div>
+          <div class="content">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Page</a></li>
+              <li>
+                <a href="#">Shop</a>
+                <ul class="dropdown">
+                  <li><a href="#">Shop women</a></li>
+                  <li><a href="#">Shop men</a></li>
+                  <li><a href="#">Shop kids</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="header-search">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+              <div class="search-input">
+                <div class="search-textbox">
+                  <form action="search.asp">
+                    <input type="search" name="search" placeholder="Search.." />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </form>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="luggage-cart">
+            <div class="luggage-icon">
+              <i class="fas fa-luggage-cart"></i>
+            </div>
+          </div>
         </div>
-    </nav>
-        <!-- end of the navbar -->
-
-
+      </nav>
+      <!-- end of the navbar -->
     </main>
-   
-</body>
+  </body>
 </html>
