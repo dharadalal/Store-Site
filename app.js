@@ -5,6 +5,7 @@ const menuDropdown = document.querySelector(".menu-dropdown");
 const menuOpen = document.querySelector(".menu-open");
 const menuClose = document.querySelector(".menu-close");
 
+const headerBottom = document.querySelector(".header-bottom");
 menuExpand.addEventListener("click", () => {
   console.log("click");
   if (menuDropdown.classList.contains("menu-close")) {
@@ -49,6 +50,29 @@ window.addEventListener("resize", () => {
     document.body.style.overflowY = "hidden";
   }
 });
+
+// sticky nav bar
+window.addEventListener("scroll", () => {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+    headerBottom.classList.add("header-bottom-fix");
+    headerBottom.classList.remove("mw-margin");
+    headerBottom.style.top = 0;
+  } else {
+    headerBottom.classList.remove("header-bottom-fix");
+    headerBottom.style.top = "-100px";
+    headerBottom.classList.add("mw-margin");
+  }
+});
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() > 150) {
+//     $("#navigation-panel").css("position", "fixed");
+//     $("#navigation-panel").css("top", 0);
+//   } else {
+//     $("#navigation-panel").css("position", "");
+//     $("#navigation-panel").css("top", "-100%");
+//   }
+// });
+
 // api url
 const api_url =
   "https://demo-ecommerce-api-bzuk.onrender.com/featured-products";
