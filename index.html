@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EShop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import font awesome -->
     <link
       rel="stylesheet"
@@ -14,7 +13,7 @@
     <!-- font awesome css -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1\/css/all.min.css"
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
@@ -27,34 +26,36 @@
       <!-- navbar  -->
       <nav class="main-navbar">
         <!-- Header Top -->
-        <div class="header-top">
-          <div class="header-container mw-margin">
-            <div class="top-info">
-              <span
-                ><i class="fa-sharp fa-solid fa-location-dot"></i> 121 King
-                Street, Melbourne
-              </span>
-              <span><i class="fas fa-mobile-alt"></i> 123-456-7890 </span>
-            </div>
-            <div class="left-info">
-              <ul class="info">
-                <li>
-                  <a href="#">
-                    <span><i class="fa-solid fa-code-compare"></i></span>
-                    Compare</a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span><i class="far fa-heart"></i></span> Wishlist</a
-                  >
-                </li>
-                <li>
-                  <a href="#">
-                    <span><i class="far fa-user"></i></span> Login</a
-                  >
-                </li>
-              </ul>
+        <div class="topheader-container">
+          <div class="top-header mw-margin">
+            <div class="header-container">
+              <div class="top-info">
+                <span
+                  ><i class="fa-sharp fa-solid fa-location-dot"></i> 121 King
+                  Street, Melbourne
+                </span>
+                <span><i class="fas fa-mobile-alt"></i> 123-456-7890 </span>
+              </div>
+              <div class="left-info">
+                <ul class="info">
+                  <li>
+                    <a href="#">
+                      <span><i class="fa-solid fa-code-compare"></i></span>
+                      Compare</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span><i class="far fa-heart"></i></span> Wishlist</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span><i class="far fa-user"></i></span> Login</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -95,11 +96,57 @@
           <div class="luggage-cart">
             <div class="luggage-icon">
               <i class="fas fa-luggage-cart"></i>
+              <div class="cart-count">
+                <span>0</span>
+              </div>
             </div>
           </div>
+
+          <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
         </div>
       </nav>
+      <section class="best-seller-section">
+        <div class="products-section">
+          <div class="headings">
+            <h3>Best Seller</h3>
+            <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+          </div>
+          <div class="product-row-container mw-margin"></div>
+        </div>
+      </section>
+
+      <!-- responsive menu -->
+      <div class="drawer-container hide">
+        <div class="drawer-backdrop"></div>
+        <div class="drawer-content">
+          <div class="top-drawer-content">
+            <p class="logo-text">ESHOP</p>
+            <button class="close-navbtn"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="menu-content">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Page</a></li>
+              <li class="menu-has-children">
+                <span class="menu-expand"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+                <a href="#">Shop</a>
+                <ul class="menu-dropdown menu-close">
+                  <li><a href="#">Shop women</a></li>
+                  <li><a href="#">Shop men</a></li>
+                  <li><a href="#">Shop kids</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <!-- end of the navbar -->
     </main>
+    <script src="/app.js"></script>
   </body>
 </html>
