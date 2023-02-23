@@ -68,10 +68,51 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// slider-arrow
-leftBtn.addEventListener("click", () => {
-  console.log("leftbtn");
+// Slider Section
+const sliderContainer = document.querySelectorAll(".slider-container");
+
+let currentSlider = 0;
+// clear all images slider
+function reset() {
+  for (let i = 0; i < sliderContainer.length; i++) {
+    sliderContainer[i].style.display = "none";
+  }
+}
+// initialise slider
+function startSlide() {
+  reset();
+  sliderContainer[0].style.display = "block";
+}
+// show previous
+function slideLeft() {
+  reset();
+  sliderContainer[currentSlider - 1].style.display = "block";
+  currentSlider--;
+}
+// show next
+function slideRight() {
+  reset();
+  sliderContainer[currentSlider + 1].style.display = "block";
+  currentSlider++;
+}
+// left arrow click
+leftBtn.addEventListener("click", function () {
+  if (currentSlider === 0) {
+    currentSlider = sliderContainer.length;
+  }
+  slideLeft();
 });
+
+// right arrow click
+rightBtn.addEventListener("click", function () {
+  if (currentSlider === sliderContainer.length - 1) {
+    currentSlider = -1;
+  }
+  slideRight();
+});
+
+startSlide();
+
 // api url
 const api_url =
   "https://demo-ecommerce-api-bzuk.onrender.com/featured-products";
