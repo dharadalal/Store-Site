@@ -132,6 +132,7 @@
   background-color: var(--bs-white);
   border: 1px solid white;
   box-shadow: 0px 3px 8px -3px #333;
+  z-index: 1;
 }
 
 .content ul li:hover .dropdown,
@@ -170,9 +171,10 @@
   padding: 8px 10px;
   right: -41px;
   margin-top: 20px;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in, visibility 0.5s ease-in;
   visibility: hidden;
-  transform: translateY(-15%);
+  transform: translateY(-5%);
+  z-index: 1;
 }
 
 .header-search .search-icon:hover .search-input {
@@ -252,6 +254,7 @@
   right: 0;
   bottom: 0;
   display: unset;
+  z-index: 2;
 }
 .drawer-backdrop {
   position: fixed;
@@ -382,15 +385,152 @@
   box-shadow: 2px 4px 8px rgb(140 129 129 / 25%);
   background-color: var(--bs-white);
   transition: all 1.4s ease-in-out;
+  z-index: 1;
 }
 
 /* Slider Section */
-.slider-image {
+.slider-image-container {
+  width: 100%;
+  height: 100%;
+}
+.slider-2 {
   position: relative;
   width: 100%;
   height: 80vh;
-  object-fit: cover;
-  object-position: 0 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/Images/slider1.jpg");
+}
+.slider-1 {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/Images/slider2.jpg");
+}
+.left-btn {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-left: 10px;
+  background-color: var(--bs-white);
+  color: var(--bs-orange);
+  width: 45px;
+  height: 45px;
+  font-size: 1.2em;
+  padding: 10px 10px;
+  border: 1px solid var(--bs-orange);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.right-btn {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  margin-right: 10px;
+  background-color: var(--bs-white);
+  color: var(--bs-orange);
+  width: 45px;
+  height: 45px;
+  font-size: 1.2em;
+  padding: 10px 10px;
+  border: 1px solid var(--bs-orange);
+  text-transform: capitalize;
+  cursor: pointer;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.left-btn:hover,
+.right-btn:hover {
+  background-color: var(--bs-orange);
+  color: var(--bs-white);
+}
+.slider-headings {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.slider-headings h4 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--bs-black);
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInLeft 1.5s 0.7s both;
+}
+.slider-headings h2 {
+  font-size: 3em;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  color: var(--bs-orange);
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeInLeft 1.5s 0.7s both;
+}
+.shop-more-btn {
+  position: relative;
+  background-color: var(--bs-orange);
+  color: var(--bs-white);
+  width: 150px;
+  height: 50px;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  animation: fadeInUp 1.5s 0.7s both;
+}
+.shop-more-btn::after {
+  position: absolute;
+  content: "";
+  width: 5%;
+  height: 100%;
+  background: rgba(3, 50, 77, 0.2);
+  left: 0px;
+  top: 0px;
+}
+/* .shop-more-btn:hover {
+  background-image: liner-gradiant (to right, darkblue, var(--bs-orange));
+} */
+
+/*  animation for slider headings*/
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 /* best-seller products */
 .best-seller-section {
@@ -454,5 +594,15 @@
   }
   .menu-icon i:hover {
     color: var(--bs-orange);
+  }
+  .slider-headings h4 {
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+  .slider-headings h2 {
+    font-size: 30px;
+  }
+  .slider-image-container {
+    height: auto;
   }
 }
