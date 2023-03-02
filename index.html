@@ -25,7 +25,6 @@
     <main class="main-container">
       <!-- navbar  -->
       <nav class="main-navbar">
-        <!-- Header Top -->
         <div class="topheader-container">
           <div class="top-header mw-margin">
             <div class="header-container">
@@ -59,56 +58,58 @@
             </div>
           </div>
         </div>
-        <div class="header-bottom mw-margin">
-          <div class="logo">
-            <h2><a href="./index.html">eshop</a></h2>
-          </div>
-          <div class="content">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Page</a></li>
-              <li>
-                <a href="#">Shop</a>
-                <ul class="dropdown">
-                  <li><a href="#">Shop women</a></li>
-                  <li><a href="#">Shop men</a></li>
-                  <li><a href="#">Shop kids</a></li>
+        <div id="header">
+          <div class="mw-margin">
+            <div class="header-bottom">
+              <div class="logo">
+                <h2><a href="./index.html">eshop</a></h2>
+              </div>
+              <div class="content">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Page</a></li>
+                  <li>
+                    <a href="#">Shop</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Shop women</a></li>
+                      <li><a href="#">Shop men</a></li>
+                      <li><a href="#">Shop kids</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="header-search">
-            <div class="search-icon">
-              <i class="fas fa-search"></i>
-              <div class="search-input">
-                <div class="search-textbox">
-                  <form action="search.asp">
-                    <input type="search" name="search" placeholder="Search.." />
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                  </form>
+              </div>
+              <div class="header-search">
+                <div class="search-icon">
+                  <i class="fas fa-search"></i>
+                  <div class="search-input">
+                    <div class="search-textbox">
+                      <form action="search.asp">
+                        <input type="search" name="search" placeholder="Search.." />
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="luggage-cart">
-            <div class="luggage-icon">
-              <i class="fas fa-luggage-cart"></i>
-              <div class="cart-count">
-                <span>0</span>
+              <div class="luggage-cart">
+                <div class="luggage-icon">
+                  <i class="fas fa-luggage-cart"></i>
+                  <div class="cart-count">
+                    <span>0</span>
+                  </div>
+                </div>
               </div>
+              <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
             </div>
           </div>
-
-          <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
         </div>
       </nav>
 
       <section class="slider-image-container">
         <div class="slider-container slider-1">
-          <!-- <img class="slider-image" src="/Images/slider1.jpg" alt="" /> -->
           <button class="left-btn">
             <span><i class="fas fa-arrow-left"></i></span>
           </button>
@@ -122,7 +123,6 @@
           </div>
         </div>
         <div class="slider-container slider-2">
-          <!-- <img class="slider-image" src="/Images/slider1.jpg" alt="" /> -->
           <button class="left-btn">
             <span><i class="fas fa-arrow-left"></i></span>
           </button>
@@ -132,7 +132,37 @@
           <div class="slider-headings">
             <h4>summer 2023</h4>
             <h2>save upto 70%</h2>
-            <button class="shop-more-btn">shop more</button>
+            <button class="shop-more-btn animate">shop more</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- sale section -->
+      <section class="sale-container">
+        <div class="sale-card-container mw-margin">
+          <div class="card-container">
+            <img class="image" src="Images/banner1.png" alt="banner" />
+            <div class="card-content">
+              <h4>super sale</h4>
+              <h3>new collection</h3>
+              <button class="shop-more-btn1">shop more</button>
+            </div>
+          </div>
+          <div class="card-container">
+            <img class="image" src="Images/banner2.png" />
+            <div class="card-content">
+              <h3>super sale</h3>
+              <h4>sale 40%</h4>
+              <button class="shop-more-btn1">shop more</button>
+            </div>
+          </div>
+          <div class="card-container">
+            <img class="image" src="Images/banner3.png" />
+            <div class="card-content">
+              <h4>10% offer</h4>
+              <h3>no selected offers</h3>
+              <button class="shop-more-btn1">shop more</button>
+            </div>
           </div>
         </div>
       </section>
@@ -143,10 +173,104 @@
             <h3>Best Seller</h3>
             <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
           </div>
-          <div class="product-row-container mw-margin"></div>
+          <div class="product-row-container mw-margin">
         </div>
       </section>
+<!-- end of best seller  -->
+      <!-- summer collection banner -->
+      <section class="summer-banner-container">
+        <div class="summer-bnner mw-margin">
+          <div class="banner">
+          <div class="banner-image">
+                <img class="trand-image" src="Images/trending_img.png" alt="trand-image">
+            </div>
+          <div class="banner-content">
+              <div class="trand-content">
+                <h4>New season trends!</h4>
+                <h3>Best Summer Collection</h3>
+                <p>Sale Get up to 50% Off</p>
+                <button class="shop-more-btn1">shop more</button>
 
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <!-- end of banner -->
+        <!-- featured section -->
+        <section class="featured-product-section">
+          <div class="featured-section">
+            <div class="headings">
+              <h3>Featured Products</h3>
+              <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+            </div>
+            <div class="featured-row-container mw-margin">
+          </div>
+        </section>
+      <!-- end featured section -->
+      <!-- offer banner section -->
+        <section class="offer-banner-container">
+          <div class="banner-backfround ">
+            <div class="offer-banner-content">
+              <h4>TRENDING</h4>
+						<h3>New Fashion</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>A aliquam amet animi blanditiis consequatur debitis dicta distinctio.</p>
+						<button class="shop-more-btn1" href="shop.html">Shop Now</button>
+            </div>
+          </div>
+        </section>
+        <!-- end of offer banner section -->
+          <!-- Blog post -->
+        <section class="blog-post-container">
+          <div class="headings">
+            <h3>Best Seller</h3>
+            <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+          </div>
+          <div class="blog-cards-content">
+            <img
+              class="image"
+              src="Images/post1.png"
+            />
+            <div class="content-container">
+              <p class="heading">BuY Home</p>
+              <p class="content">
+                Find your place with an immersive photo experience and the most
+                listings, including things you won’t find anywhere else.
+              </p>
+              <button class="browse-button">Browse Home</button>
+            </div>
+          </div>
+  
+          <div class="cards-content">
+            <img
+              class="image"
+              src="Images/post2.png"
+            />
+            <div class="content-container">
+              <p class="heading">Sell a home</p>
+              <p class="content">
+                No matter what path you take to sell your home, we can help you
+                navigate a successful sale.
+              </p>
+              <button class="browse-button">See your Options</button>
+            </div>
+          </div>
+  
+          <div class="cards-content">
+            <img
+              class="image"
+              src="Images/post3.png"
+            />
+            <div class="content-container">
+              <p class="heading">Rent a home</p>
+              <p class="content">
+                Discover a place that checks all of your boxes. Filter your rental
+                search, and find exactly what you’re looking for.
+              </p>
+              <button class="browse-button">find rentals</button>
+            </div>
+          </div>
+        </section>
       <!-- responsive menu -->
       <div class="drawer-container hide">
         <div class="drawer-backdrop"></div>
@@ -178,6 +302,10 @@
         </div>
       </div>
       <!-- end of the navbar -->
+
+      <div class="scroll-area" style="display: block;">
+        <i class="fa fa-angle-up"></i>
+     </div>
     </main>
     <script src="/app.js"></script>
   </body>

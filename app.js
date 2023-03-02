@@ -58,13 +58,11 @@ window.addEventListener("resize", () => {
 // sticky nav bar
 window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-    headerBottom.classList.add("header-bottom-fix");
-    headerBottom.classList.remove("mw-margin");
-    headerBottom.style.top = 0;
+    document.querySelector("#header").classList.add("header-bottom-fix");
+    document.querySelector("#header").style.top = 0;
   } else {
-    headerBottom.classList.remove("header-bottom-fix");
-    headerBottom.style.top = "-100px";
-    headerBottom.classList.add("mw-margin");
+    document.querySelector("#header").classList.remove("header-bottom-fix");
+    document.querySelector("#header").style.top = "-100px";
   }
 });
 
@@ -117,6 +115,9 @@ startSlide();
 const api_url =
   "https://demo-ecommerce-api-bzuk.onrender.com/featured-products";
 
+// api url
+const api_products = "https://demo-ecommerce-api-bzuk.onrender.com/products";
+
 fetch(api_url)
   .then((res) => {
     // parse the dtaa into json and returning promise here
@@ -153,21 +154,93 @@ fetch(api_url)
         const productCard = document.createElement("div");
         productCard.classList.add("product-card-container");
         productCard.innerHTML = `
-        <img id="pro-image" class="product-image" src="${product.image}" />
-        <button class="share-button">Share</button>
-        <button class="learn-button">Learn More</button>
-        <div class="content-container">
-          <p class="product-name">${product.name}</p>
-          <p class="product-description">${product.description}</p>
-          <p class="product-price">${product.price}</p>
-        </div>
-      `;
+          <img id="pro-image" class="product-image" src="${product.image}" />
+          <div class="content-container">
+            <p class="product-name">${product.name}</p>
+           <span class="product-price">$${product.price}<span>
+           <span class="price">$89.00</span>
+          </div>
+        `;
         productCardContainer.append(productCard);
       });
     } else {
       // let errorString = "Server is down";
       let productCardContainer = document.querySelector(
         ".product-row-container"
+      );
+      productCardContainer.innerHTML = `<p> ${response.error} +</p>`;
+    }
+    // console.log(response.data.products.length);
+  })
+  // ahiya browser ma je error ave e catch ma vse
+  .catch((error) => console.log(error));
+
+fetch(api_products)
+  .then((res) => {
+    // parse the dtaa into json and returning promise here
+    //The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, we use the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.
+    return res.json();
+  })
+  .then((response) => {
+    // if products null na hoy tyare add thase
+    if (!response.error) {
+      // }
+      // if (response.data.products) {
+      response.data.products.forEach((product) => {
+        // console.log(product);
+        // let eachproduct = "";
+        // let htmlSegment = `
+        // <div class="product-card-container">
+        //   <img id="pro-image" class="product-image" src="${product.image}" />
+        //   <button class="share-button">Share</button>
+        //   <button class="learn-button">Learn More</button>
+        //   <div class="content-container">
+        //     <p class="product-name">${product.name}</p>
+        //     <p class="product-description">${product.description}</p>
+        //     <p class="product-price">${product.price}</p>
+        //   </div>
+        // </div>`;
+        // eachproduct += htmlSegment;
+
+        // let productCard = document.querySelector(".product-row-container");
+        // productCard.innerHTML += htmlSegment;
+
+        let featuredCardContainer = document.querySelector(
+          ".featured-row-container"
+        );
+        const featuredproductCard = document.createElement("div");
+        featuredproductCard.classList.add("featured-card-container");
+        featuredproductCard.innerHTML = `
+        <div class="featured-thumbnail">
+        <img id="featured-image" class="featured-image" src="${product.image}" />
+        <div class="product-overly">
+          <div class="product-overly-full">
+            <div class="product-overly-full-top">
+              <ul>
+                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                <li><a href="#"><i class="fas fa-random"></i></a></li>
+                <li><a href="#"><i class="far fa-eye"></i></a></li>
+              </ul>
+            </div>
+            <!-- add to cart button -->
+            <div class="product-overly-full-bottom">
+              <button class="add-to-cart" href="#">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+          </div>
+        <div class="container">
+          <p class="product-name">${product.name}</p>
+         <span class="product-price">$${product.price}<span>
+         <span class="price">$89.00</span>
+        </div>
+        `;
+        featuredCardContainer.append(featuredproductCard);
+      });
+    } else {
+      // let errorString = "Server is down";
+      let featuredCardContainer = document.querySelector(
+        ".featured-row-container"
       );
       productCardContainer.innerHTML = `<p> ${response.error} +</p>`;
     }
