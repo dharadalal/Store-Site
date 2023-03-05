@@ -111,6 +111,27 @@ rightBtn.addEventListener("click", function () {
 
 startSlide();
 
+// scroll to top
+const scrolltop = document.querySelector(".scroll-area");
+window.addEventListener("scroll", () => {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+    scrolltop.style.display = "block";
+  } else {
+    scrolltop.style.display = "none";
+  }
+});
+
+// when user click on the scroll top button
+scrolltop.addEventListener("click", () => {
+  // document.body.scrollTop = 0;
+  // document.documentElement.scrollTop = 0;
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// products
 // api url
 const api_url =
   "https://demo-ecommerce-api-bzuk.onrender.com/featured-products";
@@ -187,30 +208,13 @@ fetch(api_products)
       // }
       // if (response.data.products) {
       response.data.products.forEach((product) => {
-        // console.log(product);
-        // let eachproduct = "";
-        // let htmlSegment = `
-        // <div class="product-card-container">
-        //   <img id="pro-image" class="product-image" src="${product.image}" />
-        //   <button class="share-button">Share</button>
-        //   <button class="learn-button">Learn More</button>
-        //   <div class="content-container">
-        //     <p class="product-name">${product.name}</p>
-        //     <p class="product-description">${product.description}</p>
-        //     <p class="product-price">${product.price}</p>
-        //   </div>
-        // </div>`;
-        // eachproduct += htmlSegment;
-
-        // let productCard = document.querySelector(".product-row-container");
-        // productCard.innerHTML += htmlSegment;
-
         let featuredCardContainer = document.querySelector(
-          ".featured-row-container"
+          ".featured-container"
         );
         const featuredproductCard = document.createElement("div");
         featuredproductCard.classList.add("featured-card-container");
         featuredproductCard.innerHTML = `
+      
         <div class="featured-thumbnail">
         <img id="featured-image" class="featured-image" src="${product.image}" />
         <div class="product-overly">
@@ -234,6 +238,7 @@ fetch(api_products)
          <span class="product-price">$${product.price}<span>
          <span class="price">$89.00</span>
         </div>
+        
         `;
         featuredCardContainer.append(featuredproductCard);
       });
