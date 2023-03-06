@@ -7,8 +7,8 @@ const menuClose = document.querySelector(".menu-close");
 
 const headerBottom = document.querySelector(".header-bottom");
 
-const leftBtn = document.querySelector(".left-btn");
-const rightBtn = document.querySelector(".right-btn");
+const leftBtn = document.querySelectorAll(".left-btn");
+const rightBtn = document.querySelectorAll(".right-btn");
 
 menuExpand.addEventListener("click", () => {
   console.log("click");
@@ -70,47 +70,50 @@ window.addEventListener("scroll", () => {
 const sliderContainer = document.querySelectorAll(".slider-container");
 
 let currentSlider = 0;
-// clear all images slider
-function reset() {
+let maxslides = sliderContainer.length;
+//2
+
+// initialize slider
+function startSlide() {
   for (let i = 0; i < sliderContainer.length; i++) {
     sliderContainer[i].style.display = "none";
   }
-}
-// initialise slider
-function startSlide() {
-  reset();
   sliderContainer[0].style.display = "block";
 }
-// show previous
-function slideLeft() {
-  reset();
-  sliderContainer[currentSlider - 1].style.display = "block";
-  currentSlider--;
-}
-// show next
-function slideRight() {
-  reset();
-  sliderContainer[currentSlider + 1].style.display = "block";
-  currentSlider++;
-}
+
 // left arrow click
-leftBtn.addEventListener("click", function () {
-  if (currentSlider === 0) {
-    currentSlider = sliderContainer.length;
-  }
-  slideLeft();
+rightBtn.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    if (currentSlider === maxslides - 1) {
+      currentSlider = 0;
+      startSlide();
+    } else {
+      sliderContainer[currentSlider].style.display = "none";
+      currentSlider++;
+      sliderContainer[currentSlider].style.display = "block";
+    }
+  });
 });
 
-// right arrow click
-rightBtn.addEventListener("click", function () {
-  if (currentSlider === sliderContainer.length - 1) {
-    currentSlider = -1;
-  }
-  slideRight();
+// left arrow click
+
+leftBtn.forEach((prevbtn) => {
+  prevbtn.addEventListener("click", function () {
+    if (currentSlider === 0) {
+      sliderContainer[currentSlider].style.display = "none";
+      sliderContainer[maxslides - 1].style.display = "block";
+      currentSlider = maxslides - 1;
+    } else {
+      sliderContainer[currentSlider].style.display = "none";
+
+      let updateone = currentSlider - 1;
+      sliderContainer[updateone].style.display = "block";
+      currentSlider--;
+    }
+  });
 });
 
 startSlide();
-
 // scroll to top
 const scrolltop = document.querySelector(".scroll-area");
 window.addEventListener("scroll", () => {
@@ -175,7 +178,25 @@ fetch(api_url)
         const productCard = document.createElement("div");
         productCard.classList.add("product-card-container");
         productCard.innerHTML = `
-          <img id="pro-image" class="product-image" src="${product.image}" />
+        <div class="featured-thumbnail">
+          <img id="featured-image" class="product-image" src="${product.image}" />
+        <div class="product-overly">
+          <div class="product-overly-full">
+            <div class="product-overly-full-top">
+              <ul>
+                <li><a href="#"><i class="far fa-heart"></i></a></li>
+                <li><a href="#"><i class="fas fa-random"></i></a></li>
+                <li><a href="#"><i class="far fa-eye"></i></a></li>
+              </ul>
+            </div>
+            <!-- add to cart button -->
+            <div class="product-overly-full-bottom">
+              <button class="add-to-cart" href="#">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+          </div>
+        
           <div class="content-container">
             <p class="product-name">${product.name}</p>
            <span class="product-price">$${product.price}<span>
