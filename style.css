@@ -1261,6 +1261,10 @@ body {
   .left-info {
     flex-wrap: wrap;
   }
+  .search-input{
+    right: -20px;
+    width: 200px;
+  }
   .content {
     display: none;
   }
